@@ -1,7 +1,16 @@
 <template>
   <div class="map-container">
     <!-- Map Element -->
-    <div id="map" ref="map" class="map"></div>
+    <div id="map" ref="map" class="map">
+      <div class="title">
+        <div class="inner">
+          <button>
+            <img src="@/assets/images/arrow.png" alt="arrow">
+          </button>
+          <h6>انتخاب موقعیت</h6>
+        </div>
+      </div>
+    </div>
 
     <!-- GPS Button -->
     <button class="gps-button" @click="findUserLocation">
@@ -149,6 +158,31 @@ const onSubmit = () => {
   height: 70vh;
   position: relative;
 
+  .title {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+    padding: 20px 0;
+
+    .inner {
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-right: 20px;
+
+      button {
+        margin-top: 5px;
+      }
+    }
+
+  }
+
   .map {
     height: 100%;
     min-height: 400px;
@@ -188,6 +222,15 @@ const onSubmit = () => {
     cursor: pointer;
     width: 58px;
     height: 58px;
+  }
+  /****************************/
+  /*     Responsive Design    */
+  /****************************/
+  @media screen and (max-width: 725px) {
+    height: 75vh;
+    .title{
+      display: inline-block;
+    }
   }
 }
 </style>

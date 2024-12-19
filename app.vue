@@ -1,8 +1,8 @@
 <template>
   <div>
     <NuxtLayout>
+      <NuxtPage/>
     </NuxtLayout>
-    <Index/>
   </div>
 </template>
 <script setup lang="ts">

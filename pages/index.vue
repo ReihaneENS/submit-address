@@ -60,10 +60,10 @@
         </div>
       </div>
     </div>
+    <CustomButton
+        text="ثبت و ادامه"
+    />
   </div>
-  <CustomButton
-      text="ثبت و ادامه"
-  />
 </template>
 
 <script setup lang="ts">
@@ -72,7 +72,9 @@
 
 <style scoped lang="scss">
 .home-wrapper{
-  height: 90vh;
+  padding: 50px 0;
+  position: relative;
+  min-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,6 +107,45 @@
         justify-content: flex-start;
         .custom-radio{
           margin: 0 20px;
+        }
+      }
+    }
+  }
+  .custom-button{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+  }
+
+  /****************************/
+  /*     Responsive Design    */
+  /****************************/
+  @media screen and (max-width: 1081px){
+    .inner{
+      width: 90%;
+    }
+  }
+  @media screen and (max-width: 725px){
+    .inner{
+      padding: 50px 0;
+      .form-wrapper{
+        h4{
+          font-size: 12px;
+        }
+        .input-group{
+          display: flex;
+          flex-direction: column;
+          align-items: self-start;
+          justify-content: flex-start;
+          .custom-input{
+            margin-bottom: 20px;
+          }
+        }
+        .radio-group{
+          label{
+            font-size: 12px;
+          }
         }
       }
     }

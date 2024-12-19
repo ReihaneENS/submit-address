@@ -36,5 +36,17 @@ const inputData = computed(()=> props.data)
       border-color: var(--achare-main);
     }
   }
+  /****************************/
+  /*     Responsive Design    */
+  /****************************/
+  @media screen and (max-width: 725px){
+    input{
+      font-size: 12px;
+      width: 93%;
+    }
+    label{
+      font-size: 12px;
+    }
+  }
 }
 </style>

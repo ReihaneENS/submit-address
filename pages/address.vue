@@ -18,8 +18,8 @@
 </template>
 
 <script setup lang="ts">
-
 import Map from "~/components/Map.client.vue";
+
 </script>
 
 <style scoped lang="scss">

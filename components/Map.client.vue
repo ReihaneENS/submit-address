@@ -38,6 +38,8 @@ import {Vector as VectorSource} from "ol/source";
 import OSM from "ol/source/OSM";
 import {Icon, Style} from "ol/style";
 import View from "ol/View";
+import {toast} from "vue3-toastify";
+import 'vue3-toastify/dist/index.css';
 
 const map = ref(null);
 const markerLayer = ref(null);
@@ -133,7 +135,7 @@ const findUserLocation = () => {
             default:
               errorMessage = "An unknown error occurred.";
           }
-          push.error({
+          toast.error({
             message: errorMessage,
           });
         },

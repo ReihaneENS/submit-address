@@ -15,6 +15,10 @@ const inputData = computed(()=> props.data)
 
 <style scoped lang="scss">
 .custom-button{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
   width: 100%;
   background-color: #ffffff;
   box-shadow: 0px -3px 7px -7px rgba(0,0,0,0.75);

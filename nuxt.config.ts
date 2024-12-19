@@ -7,6 +7,11 @@ export default defineNuxtConfig({
       title: 'Achare App',
     },
   },
+  vite: {
+    ssr: {
+      noExternal: ['ol'],
+    },
+  },
   imports: {
     dirs: ["store", "plugins", "composables"],
   },

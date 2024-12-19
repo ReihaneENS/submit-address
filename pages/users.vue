@@ -3,19 +3,34 @@
     <div class="inner">
       <h4>آدرس ها و مشخصات</h4>
       <UserCard
-          firstName="محمد"
-          lastName="محمدی"
-          phoneNumber="۰۹۱۲۱۲۳۴۵۶۷"
-          tellPhone="۰۲۱۳۴۵۶۷۸۹"
-          gender="آقا"
-          address="لورم ایپسوم متن ساختگی با تولید سادگی "
+          v-for="item in addresses"
+          :key="item.id"
+          :name="item.first_name"
+          :lastName="item.last_name"
+          :gender="item.gender"
+          :mobile="item.coordinate_mobile"
+          :phone="item.coordinate_phone_number"
+          :address="item.address"
       />
     </div>
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
+import {toast} from "vue3-toastify";
+import 'vue3-toastify/dist/index.css';
 
+const addresses = ref([]);
+
+api
+    .get("address")
+    .then((res) => (addresses.value = res))
+    .catch(() => {
+      toast.error({
+        title: "خطا",
+        message: "خطایی رخ داده است",
+      });
+    })
 </script>
 
 <style scoped lang="scss">

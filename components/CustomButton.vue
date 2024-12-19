@@ -1,7 +1,7 @@
 <template>
   <div class="custom-button">
     <div class="inner">
-      <button>{{text}}</button>
+      <button type="submit">{{text}}</button>
     </div>
   </div>
 </template>
